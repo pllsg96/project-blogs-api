@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       timestamps: false, // remove a obrigatoriedade de utilizar os campos `createdAt` e `updatedAt`
-      tableName: 'Users',
+      tableName: 'users',
       underscored: true,
   });
 

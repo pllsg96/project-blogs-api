@@ -1,12 +1,14 @@
 const loginService = require('../services/login.service');
 
-const insertLogin = async (req, res) => {
+const verifyLogin = async (req, res) => {
   const { email, password } = req.body;
-  const { status, message, result } = await loginService.insertLogin(email, password);
+  const { status, message, result } = await loginService.verifyLogin({ email, password });
+  console.log(message);
 
-  if (message) return res.status(status).json(message);
-
-  return res.status(status, result);
+  if (message) return res.status(status).json({ message });
+  return res.status(status).json({ token: result });
 };
 
-module.exports = insertLogin;
+module.exports = {
+  verifyLogin,
+};

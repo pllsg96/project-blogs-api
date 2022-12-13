@@ -9,6 +9,13 @@ const insertNewCategory = async (name) => {
   return { status: 201, result: categoryCreated };
 };
 
+const getCategories = async () => {
+  const allCategories = await Category.findAll();
+
+  return { status: 200, result: allCategories };
+};
+
 module.exports = {
   insertNewCategory,
+  getCategories,
 };

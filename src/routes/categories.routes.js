@@ -11,4 +11,8 @@ categoriesRouter.post('/',
   validateCategories,
   categoriesController.insertNewCategory);
 
+categoriesRouter.get('/',
+  validateToken,
+  categoriesController.getCategories);
+
 module.exports = categoriesRouter;
